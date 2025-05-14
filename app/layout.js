@@ -1,4 +1,5 @@
 import { Inter } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
 
 const inter = Inter({
@@ -40,14 +41,14 @@ export default function RootLayout({ children }) {
       <body className={inter.variable}>
         <header className="border-b border-gray-200 dark:border-gray-800">
           <div className="container py-4 flex justify-between items-center">
-            <a href="/" className="text-xl font-bold">
+            <Link href="/" className="text-xl font-bold">
               <span className="gradient-text">DiabetaTech</span>
-            </a>
+            </Link>
             <nav>
               <ul className="flex space-x-6">
-                <li><a href="/about">About</a></li>
-                <li><a href="/tracker">Tracker</a></li>
-                <li><a href="/contact">Contact</a></li>
+                <li><Link href="/about">About</Link></li>
+                <li><Link href="/tracker">Tracker</Link></li>
+                <li><Link href="/contact">Contact</Link></li>
               </ul>
             </nav>
           </div>

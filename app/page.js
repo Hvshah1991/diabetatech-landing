@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function HomePage() {
   return (
@@ -17,22 +18,24 @@ export default function HomePage() {
                 integrating nutrition tracking, glucose monitoring, and personalized insights.
               </p>
               <div className="flex flex-wrap gap-4">
-                <a href="/tracker" className="btn btn-primary">
+                <Link href="/tracker" className="btn btn-primary">
                   Try the Meal Tracker
-                </a>
-                <a href="/about" className="btn border border-gray-300 dark:border-gray-700">
+                </Link>
+                <Link href="/about" className="btn border border-gray-300 dark:border-gray-700">
                   Learn More
-                </a>
+                </Link>
               </div>
             </div>
             <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
                 {/* Using an existing SVG as a temporary placeholder */}
                 <div className="flex flex-col items-center justify-center text-center p-6">
-                  <img 
+                  <Image 
                     src="/globe.svg" 
                     alt="DiabetaTech Analytics"
                     className="w-40 h-40 mb-4 opacity-70"
+                    width={160}
+                    height={160}
                   />
                   <div className="text-xl font-semibold gradient-text">DiabetaTech Dashboard</div>
                   <div className="mt-2 text-gray-700 dark:text-gray-300 text-sm">
@@ -57,7 +60,7 @@ export default function HomePage() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-2">Comprehensive Meal Tracking</h3>
-              <p className="text-gray-700 dark:text-gray-300">Log meals with carb counts, insulin doses, and blood glucose reactions to better understand your body's response.</p>
+              <p className="text-gray-700 dark:text-gray-300">Log meals with carb counts, insulin doses, and blood glucose reactions to better understand your body&apos;s response.</p>
             </div>
             
             <div className="p-6 rounded-lg border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow">
@@ -89,11 +92,11 @@ export default function HomePage() {
           <h2 className="text-3xl font-bold mb-6">Coming Soon</h2>
           <p className="text-lg max-w-2xl mx-auto mb-8 text-gray-700 dark:text-gray-300">
             Our advanced meal tracker will be released soon, helping you build a personal database of foods, 
-            restaurants, and your body's unique responses to help fine-tune your diabetes management.
+            restaurants, and your body&apos;s unique responses to help fine-tune your diabetes management.
           </p>
-          <a href="/tracker" className="btn btn-primary">
+          <Link href="/tracker" className="btn btn-primary">
             Get Early Access
-          </a>
+          </Link>
         </div>
       </section>
     </main>

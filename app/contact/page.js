@@ -6,7 +6,7 @@ export default function ContactPage() {
           <div className="max-w-3xl mx-auto">
             <h1 className="text-4xl font-bold mb-8">Get in Touch</h1>
             <p className="text-lg mb-8 text-gray-700 dark:text-gray-300">
-              Have questions about DiabetaTech or want to share your ideas? We'd love to hear from you.
+              Have questions about DiabetaTech or want to share your ideas? We&apos;d love to hear from you.
             </p>
             
             <div className="grid md:grid-cols-2 gap-12">

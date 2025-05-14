@@ -22,10 +22,10 @@ export default function TrackerRedirect() {
         </div>
         <h1 className="text-2xl font-bold mb-4">Taking you to DiabetaTech Meal Tracker</h1>
         <p className="text-gray-700 dark:text-gray-300 mb-4">
-          You're being redirected to our interactive meal tracking tool.
+          You&apos;re being redirected to our interactive meal tracking tool.
         </p>
         <p className="text-gray-700 dark:text-gray-300 mb-6">
-          If you're not redirected automatically, 
+          If you&apos;re not redirected automatically, 
           <a 
             href="https://diabetatech-meal-tracker.replit.app" 
             className="text-primary font-medium hover:underline ml-1"

@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function AboutPage() {
   return (
     <main>
@@ -13,13 +15,13 @@ export default function AboutPage() {
                 data-driven tools that make diabetes management less burdensome and more insightful.
               </p>
               <p className="mb-4 text-gray-700 dark:text-gray-300">
-                We believe that understanding your body's unique patterns is key to better health outcomes. 
+                We believe that understanding your body&apos;s unique patterns is key to better health outcomes. 
                 Our tools are designed to help you collect, visualize, and learn from your own data.
               </p>
               
               <h2 className="text-2xl font-semibold mb-4 mt-8">Our Approach</h2>
               <p className="mb-4 text-gray-700 dark:text-gray-300">
-                We're building DiabetaTech step by step, starting with focused tools that address specific needs 
+                We&apos;re building DiabetaTech step by step, starting with focused tools that address specific needs 
                 in the diabetes community. We believe in shipping early and often, constantly learning from user feedback.
               </p>
               <p className="text-gray-700 dark:text-gray-300">
@@ -30,7 +32,7 @@ export default function AboutPage() {
             
             <div>
               <div className="bg-gray-100 dark:bg-gray-800/50 p-6 rounded-lg mb-8">
-                <h2 className="text-2xl font-semibold mb-4">The Founder's Story</h2>
+                <h2 className="text-2xl font-semibold mb-4">The Founder&apos;s Story</h2>
                 <p className="mb-4 text-gray-700 dark:text-gray-300">
                   As a recent Type 1 Diabetes diagnosis recipient, I quickly discovered that while there are many diabetes management tools available, 
                   few offer the comprehensive, data-driven approach I was looking for.
@@ -58,9 +60,9 @@ export default function AboutPage() {
           </div>
           
           <div className="mt-12 text-center">
-            <a href="/tracker" className="btn btn-primary">
+            <Link href="/tracker" className="btn btn-primary">
               Try Our Tools
-            </a>
+            </Link>
           </div>
         </div>
       </section>
