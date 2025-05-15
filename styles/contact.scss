@@ -1,0 +1,147 @@
+.contact-main {
+  background: #00141D;
+  color: #F2D8A8;
+  min-height: calc(100vh - 200px);
+  margin-top: 80px;
+  padding: 4rem 1.5rem;
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-title {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: #F2D8A8;
+  font-weight: 500;
+}
+
+.contact-intro {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  margin-bottom: 4rem;
+  color: #F2D8A8;
+  max-width: 600px;
+}
+
+.contact-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.contact-method {
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #F2D8A8;
+    font-weight: 500;
+  }
+
+  p {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    opacity: 0.8;
+  }
+}
+
+.contact-main .contact-link {
+  color: #00B5A2;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  display: inline-block;
+  margin: 0.5rem 0;
+
+  &:hover {
+    color: #F2D8A8;
+  }
+}
+
+.contact-back {
+  margin-top: 4rem;
+  
+  a {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #F2D8A8;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    color: #F2D8A8;
+    text-decoration: none;
+
+    &:hover {
+      background: #F2D8A8;
+      color: #00141D;
+    }
+  }
+}
+
+// Mobile styles
+@media (max-width: 768px) {
+  .contact-main {
+    padding: 2rem 1rem;
+    margin-top: 64px;
+  }
+
+  .contact-title {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .contact-intro {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+  }
+
+  .contact-methods {
+    gap: 2rem;
+  }
+
+  .contact-method {
+    h2 {
+      font-size: 1.3rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+
+  .contact-link {
+    font-size: 1rem;
+  }
+
+  .contact-back {
+    margin-top: 3rem;
+    
+    a {
+      padding: 0.6rem 1.2rem;
+      font-size: 0.95rem;
+    }
+  }
+}
+
+// Small mobile styles
+@media (max-width: 480px) {
+  .contact-main {
+    padding: 1.5rem 1rem;
+  }
+
+  .contact-title {
+    font-size: 2rem;
+  }
+
+  .contact-intro {
+    font-size: 1rem;
+  }
+
+  .contact-method {
+    h2 {
+      font-size: 1.2rem;
+    }
+  }
+} 

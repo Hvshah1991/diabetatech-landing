@@ -1,0 +1,29 @@
+.hero-image-section {
+  width: 100%;
+  background: #00141D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0rem 1rem 0rem;
+}
+
+.hero-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: -6rem;
+  @media (min-width: 768px) {
+    margin-top: -2rem;
+  }
+}
+
+.hero-image {
+  width: 620px;
+  height: auto;
+  max-width: 90vw;
+  object-fit: contain;
+  @media (min-width: 768px) {
+    width: 800px;
+  }
+} 

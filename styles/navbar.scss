@@ -1,0 +1,209 @@
+.navbar {
+    width: 100%;
+    background: #00141D;
+    color: white;
+    padding: 1rem 1.5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      min-width: 0;
+    }
+  
+    .logo {
+      display: flex;
+      align-items: center;
+  
+      img {
+        height: 40px;
+      }
+  
+      span {
+        margin-left: 0.5rem;
+        font-size: 1.25rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        color: #505EA6;
+      }
+    }
+  
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+  
+      a {
+        color: white;
+        text-decoration: none;
+  
+        &:hover {
+          color: #65d6d0;
+        }
+      }
+    }
+  
+    .cta {
+      background: #65d6d0;
+      color: black;
+      padding: 0.5rem 1.25rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      text-decoration: none;
+  
+      &:hover {
+        background: #4fc0ba;
+      }
+    }
+  
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      box-shadow: none;
+      outline: none;
+      margin-left: auto;
+      z-index: 100;
+      @media (max-width: 768px) {
+        display: block;
+      }
+    }
+  
+    .mobile-menu {
+      background: #050E17;
+      color: white;
+      padding: 1rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .mobile-link {
+      font-size: 1.125rem;
+      text-decoration: none;
+      color: white;
+  
+      &.cta {
+        background: #65d6d0;
+        color: black;
+        text-align: center;
+        padding: 0.5rem 1rem;
+        border-radius: 9999px;
+      }
+    }
+  }
+
+// --- Mobile improvements ---
+
+.nav-links.desktop,
+.desktop {
+  @media (max-width: 768px) {
+    display: none !important;
+  }
+}
+
+.hamburger {
+  margin-left: auto;
+  z-index: 100;
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 64px; // adjust if your navbar is taller/shorter
+  left: 0;
+  width: 100vw;
+  background: #001724;
+  color: white;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  z-index: 99;
+}
+
+.mobile-link {
+  font-size: 1.25rem;
+  padding: 0.75rem 0;
+  text-decoration: none;
+  color: white;
+  border-radius: 8px;
+  text-align: left;
+
+  &:active,
+  &:focus {
+    background: #65d6d0;
+    color: #001724;
+  }
+
+  &.cta {
+    background: #65d6d0;
+    color: black;
+    text-align: center;
+    padding: 1rem 0;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 1.25rem;
+  }
+}
+
+.nav-links.desktop {
+  display: flex;
+  gap: 1.1rem;
+  flex-shrink: 1;
+  min-width: 0;
+
+  .about-link {
+    color: #DE3338;
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .tracker-link {
+    color: #D5A23E;
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .contact-link {
+    color: #638A12;
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.desktop {
+  white-space: nowrap;
+}
+
+.cta {
+  background: #00B5A2;
+  color: white;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  &:hover {
+    background: #009e8c;
+  }
+}
+
+// Mobile menu link colors
+.mobile-link.about-link { color: #DE3338; }
+.mobile-link.tracker-link { color: #D5A23E; }
+.mobile-link.contact-link { color: #638A12; }
+.mobile-link.cta { background: #00B5A2; color: white; }
