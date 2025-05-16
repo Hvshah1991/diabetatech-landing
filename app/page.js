@@ -1,11 +1,15 @@
+"use client";
 import Image from 'next/image';
 import '../styles/founder.scss';
 import '../styles/hero.scss';
 import '../styles/tracker.scss';
 import '../styles/community.scss';
 import '../styles/diet.scss';
+import { useState } from 'react';
 
 export default function HomePage() {
+  const [communitySubmitted, setCommunitySubmitted] = useState(false);
+
   return (
     <div style={{ minHeight: '100vh', width: '100%' }}>
       {/* Founder Section */}
@@ -138,11 +142,15 @@ export default function HomePage() {
               className="rounded-xl community-img"
               priority
             />
-            <form className="community-form">
-              <label htmlFor="community-input" className="community-label">Tell us your story / Share your feedback</label>
-              <textarea id="community-input" className="community-input" rows={4} placeholder="Your story, challenge, or idea..." required></textarea>
-              <button type="submit" className="community-submit">Submit</button>
-            </form>
+            {!communitySubmitted ? (
+              <form className="community-form" onSubmit={e => { e.preventDefault(); setCommunitySubmitted(true); }}>
+                <label htmlFor="community-input" className="community-label">Tell us your story / Share your feedback</label>
+                <textarea id="community-input" className="community-input" rows={4} placeholder="Your story, challenge, or idea..." required></textarea>
+                <button type="submit" className="community-submit">Submit</button>
+              </form>
+            ) : (
+              <div className="community-thankyou">Thank you for your message, we will get back to you.</div>
+            )}
           </div>
         </div>
       </section>
