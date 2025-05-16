@@ -1,0 +1,234 @@
+.diet-section {
+  width: 100%;
+  background: #00141D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
+}
+
+.diet-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 1100px;
+  width: 100%;
+  gap: 3rem;
+  padding: 0 1.5rem;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 1rem;
+    align-items: center;
+  }
+}
+
+.diet-main {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  @media (max-width: 900px) {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.diet-heading {
+  color: #505EA6;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  @media (max-width: 900px) {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.diet-text {
+  color: #F2D8A8;
+  font-size: 1.18rem;
+  margin-bottom: 2.2rem;
+  line-height: 1.7;
+  @media (max-width: 900px) {
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.diet-recipes {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  @media (max-width: 900px) {
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    align-items: center;
+    margin-top: 1.2rem;
+  }
+}
+
+.diet-recipe-card {
+  background: #001711;
+  border: 1.5px solid #D5A23E;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.2rem 1.5rem;
+  min-width: 260px;
+  max-width: 340px;
+  width: 100%;
+  text-decoration: none;
+  transition: box-shadow 0.18s, border 0.18s, transform 0.18s;
+  cursor: pointer;
+  &:hover, &:focus {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+    border-color: #00B5A2;
+    transform: translateY(-2px) scale(1.03);
+  }
+  @media (max-width: 900px) {
+    max-width: 100%;
+    min-width: 0;
+    padding: 1.1rem 1rem;
+  }
+}
+
+.diet-recipe-img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #00141D;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+
+.diet-recipe-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.diet-recipe-title {
+  color: #F2D8A8;
+  font-size: 1.13rem;
+  font-weight: 600;
+}
+
+.diet-recipe-carbs {
+  color: #D5A23E;
+  font-size: 1.01rem;
+  font-weight: 500;
+}
+
+.diet-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 900px) {
+    width: 100%;
+    margin-bottom: 0;
+    margin-top: 1.5rem;
+  }
+}
+
+.diet-mom-img {
+  max-width: 420px;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+  @media (max-width: 900px) {
+    max-width: 100%;
+  }
+}
+
+.diet-recipe-detail {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 3rem 1.5rem 4rem 1.5rem;
+  background: #00141D;
+  color: #F2D8A8;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.diet-recipe-detail-heading {
+  color: #505EA6;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  max-width: 700px;
+}
+
+.diet-recipe-detail-img {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+  margin-bottom: 2rem;
+}
+
+.diet-recipe-detail-content {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #F2D8A8;
+  padding: 0 0.5rem;
+  p {
+    margin-bottom: 1.2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .diet-recipe-detail {
+    max-width: 100%;
+    padding: 2rem 0.5rem 3rem 0.5rem;
+  }
+  .diet-recipe-detail-content {
+    max-width: 100%;
+    padding: 0;
+  }
+  .diet-recipe-detail-img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+.diet-recipe-back {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+
+  a {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #F2D8A8;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    color: #F2D8A8;
+    text-decoration: none;
+    font-size: 1.08rem;
+    font-weight: 500;
+    background: none;
+    &:hover {
+      background: #F2D8A8;
+      color: #00141D;
+    }
+  }
+} 
