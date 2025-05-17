@@ -5,10 +5,49 @@ import '../styles/hero.scss';
 import '../styles/tracker.scss';
 import '../styles/community.scss';
 import '../styles/diet.scss';
-import { useState } from 'react';
+import '../styles/journey.scss';
+import { useState, useEffect } from 'react';
 
 export default function HomePage() {
   const [communitySubmitted, setCommunitySubmitted] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  const journeyImages = [
+    { src: "/morning_walk.png", caption: "Morning Walk" },
+    { src: "/eat_healthy.png", caption: "Eat Healthy" },
+    { src: "/sugar_bag.jpg", caption: "Sugar Bag" },
+    { src: "/small_treats.png", caption: "Small Treats" },
+    { src: "/back_to_bolus.jpg", caption: "Back to Bolus" },
+    { src: "/more_treats.jpg", caption: "More Treats" },
+    { src: "/fresh_air.png", caption: "Fresh Air" },
+    { src: "/spread_love.png", caption: "Spread Love" },
+    { src: "/sun_and_vitamin_d.png", caption: "Sun and Vitamin D" },
+    { src: "/celebration.png", caption: "Celebration" },
+    { src: "/more_fresh_air.png", caption: "More Fresh Air" },
+    { src: "/embrace_nature.png", caption: "Embrace Nature" },
+    { src: "/spread_love_with_family.jpg", caption: "Spread Love with Family" }
+  ];
+  
+  // Auto scroll carousel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev === journeyImages.length - 1 ? 0 : prev + 1));
+    }, 4000);
+    
+    return () => clearInterval(interval);
+  }, [journeyImages.length]);
+  
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev === journeyImages.length - 1 ? 0 : prev + 1));
+  };
+  
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? journeyImages.length - 1 : prev - 1));
+  };
+  
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+  };
 
   return (
     <div style={{ minHeight: '100vh', width: '100%' }}>
@@ -88,11 +127,65 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      
+      {/* Journey Section */}
+      <section className="journey-section">
+        <div className="journey-content">
+          <div className="journey-text-container">
+            <h2 className="journey-heading">Journey</h2>
+            <p className="journey-text">
+              T1D Life is all about ups and downs, with every day bringing new challenges and victories. The journey with Type 1 Diabetes teaches us to embrace balance—to find joy in morning walks and fresh air, to be mindful about nutrition without missing out on life&apos;s treats. It reminds us to appreciate the support of family and friends, the healing power of nature, and the importance of celebrating every moment. This journey isn&apos;t just about managing blood sugar—it&apos;s about living fully while navigating the daily rhythm of boluses, sensors, and the occasional sugar bag. Through it all, we learn resilience, patience, and the beauty of spreading love in a life that&apos;s sweetened by so much more than glucose.
+            </p>
+          </div>
+          
+          <div className="journey-carousel-container">
+            <div className="journey-carousel">
+              <div className="carousel-inner" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+                {journeyImages.map((image, index) => (
+                  <div key={index} className="carousel-item">
+                    <Image 
+                      src={image.src} 
+                      alt={image.caption} 
+                      className="carousel-image" 
+                      width={600}
+                      height={350}
+                      style={{objectFit: "cover"}}
+                    />
+                    <div className="carousel-caption">{image.caption}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div className="carousel-controls">
+              <button className="carousel-control" onClick={prevSlide}>&#8249;</button>
+              <button className="carousel-control" onClick={nextSlide}>&#8250;</button>
+            </div>
+            
+            <div className="carousel-indicators">
+              {journeyImages.map((_, index) => (
+                <div 
+                  key={index} 
+                  className={`carousel-indicator ${index === currentSlide ? 'active' : ''}`}
+                  onClick={() => goToSlide(index)}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+      
       {/* Diet Section */}
       <section className="diet-section">
         <div className="diet-content">
           <div className="diet-image">
-            <img src="/diet_mom.png" alt="Mom Cooking" className="diet-mom-img" />
+            <Image
+              src="/diet_mom.png"
+              alt="Mom Cooking"
+              width={400}
+              height={300}
+              className="diet-mom-img"
+            />
           </div>
           <div className="diet-main">
             <h2 className="diet-heading">Diet: Real food. Real love. T1D-friendly.</h2>
@@ -104,14 +197,26 @@ export default function HomePage() {
             </p>
             <div className="diet-recipes">
               <a href="/diet/chia-pudding" className="diet-recipe-card">
-                <img src="/chia_pudding.png" alt="Chia Pudding Dessert" className="diet-recipe-img" />
+                <Image 
+                  src="/chia_pudding.png" 
+                  alt="Chia Pudding Dessert" 
+                  width={300}
+                  height={200}
+                  className="diet-recipe-img" 
+                />
                 <div className="diet-recipe-info">
                   <div className="diet-recipe-title">Chia Pudding Dessert</div>
                   <div className="diet-recipe-carbs">Net Carbs: 11g</div>
                 </div>
               </a>
               <a href="/diet/eggplant-burrata" className="diet-recipe-card">
-                <img src="/eggplant.png" alt="Eggplant Burrata" className="diet-recipe-img" />
+                <Image 
+                  src="/eggplant.png" 
+                  alt="Eggplant Burrata" 
+                  width={300}
+                  height={200}
+                  className="diet-recipe-img" 
+                />
                 <div className="diet-recipe-info">
                   <div className="diet-recipe-title">Eggplant Burrata</div>
                   <div className="diet-recipe-carbs">Net Carbs: 0g</div>
