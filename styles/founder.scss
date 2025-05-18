@@ -22,7 +22,7 @@
   @media (min-width: 1200px) {
     max-width: 1200px;
     gap: 4rem;
-    padding-left: 0;
+    padding-left: 0.5rem;
     padding-right: 0;
   }
 
@@ -78,28 +78,3 @@
     }
   }
 }
-
-.hero-image-section {
-  width: 100%;
-  background: #00141D;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2.5rem 0 2.5rem 0;
-}
-
-.hero-image-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.hero-image {
-  width: 320px;
-  height: auto;
-  max-width: 90vw;
-  @media (min-width: 768px) {
-    width: 600px;
-  }
-} 

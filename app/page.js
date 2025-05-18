@@ -7,10 +7,12 @@ import '../styles/community.scss';
 import '../styles/diet.scss';
 import '../styles/journey.scss';
 import { useState, useEffect } from 'react';
+import EligibilityChecker from './components/EligibilityChecker';
 
 export default function HomePage() {
   const [communitySubmitted, setCommunitySubmitted] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isEligibilityOpen, setIsEligibilityOpen] = useState(false);
   
   const journeyImages = [
     { src: "/morning_walk.png", caption: "Morning Walk" },
@@ -49,6 +51,38 @@ export default function HomePage() {
     setCurrentSlide(index);
   };
 
+  const openEligibilityChecker = () => {
+    setIsEligibilityOpen(true);
+  };
+
+  const closeEligibilityChecker = () => {
+    setIsEligibilityOpen(false);
+  };
+
+  const handleCommunitySubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    
+    try {
+      const response = await fetch("https://formspree.io/f/mvgaljyz", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+      
+      if (response.ok) {
+        setCommunitySubmitted(true);
+      } else {
+        alert("Oops! There was a problem submitting your feedback.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Oops! There was a problem submitting your feedback.");
+    }
+  };
+
   return (
     <div style={{ minHeight: '100vh', width: '100%' }}>
       {/* Founder Section */}
@@ -84,6 +118,8 @@ export default function HomePage() {
             className="hero-image"
             priority
           />
+          <h1 className="hero-heading">Built by a T1D. One Place. Everything T1D.</h1>
+          <p className="hero-description">From meals to mindset—made for life with Type 1.</p>
         </div>
       </section>
       {/* Meal Tracker Playbook Section */}
@@ -121,8 +157,14 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 className="tracker-app-btn"
               >
-                Open Meal Tracker App
+                Open Founder&apos;s Tracker
               </a>
+              <button
+                onClick={openEligibilityChecker}
+                className="qualifier-btn"
+              >
+                Yes, This Is for Me
+              </button>
             </div>
           </div>
         </div>
@@ -178,51 +220,70 @@ export default function HomePage() {
       {/* Diet Section */}
       <section className="diet-section">
         <div className="diet-content">
-          <div className="diet-image">
-            <Image
-              src="/diet_mom.png"
-              alt="Mom Cooking"
-              width={400}
-              height={300}
-              className="diet-mom-img"
-            />
-          </div>
-          <div className="diet-main">
-            <h2 className="diet-heading">Diet: Real food. Real love. T1D-friendly.</h2>
-            <p className="diet-text">
-              Managing Type 1 Diabetes starts at the table—and no one understands that better than a mom. This section is dedicated to recipes lovingly crafted by my own mom, who stepped up in every way after my diagnosis.<br /><br />
-              Every dish she shares is built around what matters for T1D:<br />
-              <b>Low-carb</b> to avoid BG spikes, <b>High-protein</b> to keep you full and steady, <b>Healthy fats</b> to support balanced nutrition.<br /><br />
-              These aren&apos;t just recipes—they&apos;re comfort, care, and daily support in edible form. Whether you&apos;re newly diagnosed or just looking for better food choices, these meals are created to keep you nourished without the blood sugar rollercoaster.
-            </p>
-            <div className="diet-recipes">
-              <a href="/diet/chia-pudding" className="diet-recipe-card">
-                <Image 
-                  src="/chia_pudding.png" 
-                  alt="Chia Pudding Dessert" 
-                  width={300}
-                  height={200}
-                  className="diet-recipe-img" 
-                />
-                <div className="diet-recipe-info">
-                  <div className="diet-recipe-title">Chia Pudding Dessert</div>
-                  <div className="diet-recipe-carbs">Net Carbs: 11g</div>
-                </div>
-              </a>
-              <a href="/diet/eggplant-burrata" className="diet-recipe-card">
-                <Image 
-                  src="/eggplant.png" 
-                  alt="Eggplant Burrata" 
-                  width={300}
-                  height={200}
-                  className="diet-recipe-img" 
-                />
-                <div className="diet-recipe-info">
-                  <div className="diet-recipe-title">Eggplant Burrata</div>
-                  <div className="diet-recipe-carbs">Net Carbs: 0g</div>
-                </div>
-              </a>
+          <h2 className="diet-heading">Diet: Real food. Real love. T1D-friendly.</h2>
+          
+          <div className="diet-content-row">
+            <div className="diet-image">
+              <Image
+                src="/diet_mom.png"
+                alt="Mom Cooking"
+                width={500}
+                height={400}
+                className="diet-mom-img"
+                priority
+              />
             </div>
+            
+            <div className="diet-main">
+              <p className="diet-text">
+                Managing Type 1 Diabetes starts at the table—and no one understands that better than a mom. This section is dedicated to recipes lovingly crafted by my own mom, who stepped up in every way after my diagnosis.<br /><br />
+                Every dish she shares is built around what matters for T1D:<br />
+                <b>Low-carb</b> to avoid BG spikes, <b>High-protein</b> to keep you full and steady, <b>Healthy fats</b> to support balanced nutrition.<br /><br />
+                These aren&apos;t just recipes—they&apos;re comfort, care, and daily support in edible form. Whether you&apos;re newly diagnosed or just looking for better food choices, these meals are created to keep you nourished without the blood sugar rollercoaster.
+              </p>
+            </div>
+          </div>
+          
+          <div className="diet-recipes">
+            <a href="/diet" className="diet-recipe-card">
+              <Image 
+                src="/recipe_collection.png" 
+                alt="All Recipes" 
+                width={200}
+                height={100}
+                className="diet-recipe-img" 
+              />
+              <div className="diet-recipe-info">
+                <div className="diet-recipe-title">View All Recipes</div>
+                <div className="diet-recipe-carbs">Browse Our Collection</div>
+              </div>
+            </a>
+            <a href="/diet/chia-pudding" className="diet-recipe-card">
+              <Image 
+                src="/chia_pudding.png" 
+                alt="Chia Pudding Dessert" 
+                width={300}
+                height={200}
+                className="diet-recipe-img" 
+              />
+              <div className="diet-recipe-info">
+                <div className="diet-recipe-title">Chia Pudding Dessert</div>
+                <div className="diet-recipe-carbs">Net Carbs: 11g</div>
+              </div>
+            </a>
+            <a href="/diet/eggplant-burrata" className="diet-recipe-card">
+              <Image 
+                src="/eggplant.png" 
+                alt="Eggplant Burrata" 
+                width={300}
+                height={200}
+                className="diet-recipe-img" 
+              />
+              <div className="diet-recipe-info">
+                <div className="diet-recipe-title">Eggplant Burrata</div>
+                <div className="diet-recipe-carbs">Net Carbs: 0g</div>
+              </div>
+            </a>
           </div>
         </div>
       </section>
@@ -248,9 +309,21 @@ export default function HomePage() {
               priority
             />
             {!communitySubmitted ? (
-              <form className="community-form" onSubmit={e => { e.preventDefault(); setCommunitySubmitted(true); }}>
+              <form className="community-form" onSubmit={handleCommunitySubmit}>
+                <input type="hidden" name="form-name" value="community-feedback" />
                 <label htmlFor="community-input" className="community-label">Tell us your story / Share your feedback</label>
-                <textarea id="community-input" className="community-input" rows={4} placeholder="Your story, challenge, or idea..." required></textarea>
+                <textarea id="community-input" name="message" className="community-input" rows={4} placeholder="Your story, challenge, or idea..." required></textarea>
+                <div className="form-group">
+                  <label htmlFor="community-email" className="community-label">Your Email</label>
+                  <input 
+                    type="email" 
+                    id="community-email"
+                    name="email" 
+                    className="community-input" 
+                    placeholder="your@email.com"
+                    required
+                  />
+                </div>
                 <button type="submit" className="community-submit">Submit</button>
               </form>
             ) : (
@@ -259,6 +332,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      
+      {/* Eligibility Checker Modal */}
+      <EligibilityChecker isOpen={isEligibilityOpen} onClose={closeEligibilityChecker} />
     </div>
   );
 }

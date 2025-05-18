@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 3rem 0;
+  padding: 1.5rem 0;
 }
 
 .journey-content {
@@ -47,7 +47,7 @@
   margin-bottom: 1.5rem;
   
   @media (max-width: 900px) {
-    font-size: 2rem;
+    font-size: 1.35rem;
     margin-bottom: 1rem;
   }
 }
@@ -58,7 +58,7 @@
   line-height: 1.7;
   
   @media (max-width: 900px) {
-    font-size: 1.05rem;
+    font-size: 0.95rem;
   }
 }
 

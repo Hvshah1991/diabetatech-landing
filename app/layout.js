@@ -19,13 +19,23 @@ const dmMono = DM_Mono({
 export const metadata = {
   title: "DiabetaTech",
   description: "Smart tools for managing Type 1 Diabetes — from meal tracking to glucose trends, all built with care and data.",
+  icons: {
+    icon: [
+      { url: '/logo-diabetatech-small.jpg', type: 'image/jpeg' },
+      { url: '/logo-diabetatech.png', type: 'image/png' }
+    ],
+    shortcut: '/logo-diabetatech-small.jpg',
+    apple: '/logo-diabetatech-small.jpg',
+  }
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/logo-diabetatech.png" />
+        <link rel="icon" href="/logo-diabetatech-small.jpg" />
+        <link rel="shortcut icon" href="/logo-diabetatech-small.jpg" />
+        <link rel="apple-touch-icon" href="/logo-diabetatech-small.jpg" />
       </head>
       <body className={`${plusJakarta.variable} ${dmMono.variable}`}>
         <Navbar />

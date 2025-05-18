@@ -55,7 +55,7 @@
   margin-bottom: 2rem;
   line-height: 1.7;
   @media (max-width: 900px) {
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     margin-bottom: 1.5rem;
   }
 }
@@ -94,11 +94,18 @@
   font-size: 1.05rem;
   margin-bottom: 0.5rem;
   font-weight: 500;
+  display: block;
+  align-self: flex-start;
+  
+  @media (max-width: 900px) {
+    align-self: flex-start;
+    width: 100%;
+  }
 }
 
 .community-input {
   width: 100%;
-  min-height: 100px;
+  min-height: 60px;
   background: #001711;
   color: #F2D8A8;
   border: 1.5px solid #D5A23E;
@@ -113,6 +120,11 @@
     border-color: #00B5A2;
     box-shadow: 0 0 0 2px #00B5A2;
   }
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 0.5rem;
 }
 
 .community-submit {

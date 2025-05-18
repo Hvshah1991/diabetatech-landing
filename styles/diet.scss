@@ -9,32 +9,17 @@
 
 .diet-content {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   max-width: 1100px;
   width: 100%;
-  gap: 3rem;
+  gap: 1rem;
   padding: 0 1.5rem;
 
   @media (max-width: 900px) {
-    flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
     padding: 0 1rem;
-    align-items: center;
-  }
-}
-
-.diet-main {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  @media (max-width: 900px) {
-    align-items: center;
-    text-align: center;
-    width: 100%;
   }
 }
 
@@ -42,35 +27,96 @@
   color: #505EA6;
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  text-align: center;
+  
   @media (max-width: 900px) {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.diet-content-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  width: 100%;
+  margin: 1.5rem 0;
+  
+  @media (max-width: 900px) {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+.diet-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 380px;
+  flex-shrink: 0;
+  
+  @media (max-width: 900px) {
+    max-width: 100%;
+  }
+}
+
+.diet-mom-img {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+  @media (max-width: 900px) {
+    margin-top: -3rem;
+  }
+}
+
+.diet-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  
+  @media (max-width: 900px) {
+    align-items: center;
   }
 }
 
 .diet-text {
   color: #F2D8A8;
   font-size: 1.18rem;
-  margin-bottom: 2.2rem;
+  margin-bottom: 2rem;
   line-height: 1.7;
+  text-align: left;
+  
   @media (max-width: 900px) {
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     margin-bottom: 1.5rem;
+    text-align: center;
   }
 }
 
 .diet-recipes {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  flex-wrap: nowrap;
+  gap: 1.5rem;
   margin-top: 1.5rem;
+  overflow-x: none;
+  padding-bottom: 1rem;
+  width: 100%;
+  justify-content: center;
+  
   @media (max-width: 900px) {
     flex-direction: column;
     gap: 1.5rem;
-    width: 100%;
     align-items: center;
-    margin-top: 1.2rem;
+    margin-top: -1.5rem;
+    overflow-x: visible;
   }
 }
 
@@ -85,20 +131,24 @@
   gap: 1.2rem;
   padding: 1.2rem 1.5rem;
   min-width: 260px;
-  max-width: 340px;
+  max-width: 320px;
   width: 100%;
   text-decoration: none;
   transition: box-shadow 0.18s, border 0.18s, transform 0.18s;
   cursor: pointer;
+  flex-shrink: 0;
+  
   &:hover, &:focus {
     box-shadow: 0 6px 24px rgba(0,0,0,0.18);
     border-color: #00B5A2;
     transform: translateY(-2px) scale(1.03);
   }
+  
   @media (max-width: 900px) {
     max-width: 100%;
     min-width: 0;
     padding: 1.1rem 1rem;
+    flex-shrink: 1;
   }
 }
 
@@ -129,29 +179,6 @@
   font-weight: 500;
 }
 
-.diet-image {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @media (max-width: 900px) {
-    width: 100%;
-    margin-bottom: 0;
-    margin-top: 1.5rem;
-  }
-}
-
-.diet-mom-img {
-  max-width: 420px;
-  width: 100%;
-  height: auto;
-  border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.13);
-  @media (max-width: 900px) {
-    max-width: 100%;
-  }
-}
-
 .diet-recipe-detail {
   max-width: 900px;
   margin: 2rem auto;
@@ -180,6 +207,24 @@
   border-radius: 16px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.13);
   margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.diet-recipe-full-image {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.diet-recipe-instruction-img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
 
 .diet-recipe-detail-content {
@@ -208,6 +253,9 @@
     width: 180px;
     height: 180px;
   }
+  .diet-recipe-full-image {
+    max-width: 100%;
+  }
 }
 
 .diet-recipe-back {
@@ -231,4 +279,113 @@
       color: #00141D;
     }
   }
+}
+
+// All Recipes Page
+.all-recipes-page {
+  background: #00141D;
+  color: #F2D8A8;
+  min-height: 80vh;
+  padding: 3rem 1.5rem 4rem 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.all-recipes-heading {
+  color: #505EA6;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  margin-top: 2rem;
+  
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+  }
+}
+
+.all-recipes-description {
+  text-align: center;
+  max-width: 800px;
+  margin-bottom: 3rem;
+  
+  p {
+    color: #F2D8A8;
+    font-size: 1.18rem;
+    line-height: 1.6;
+    
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+}
+
+.all-recipes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  margin-bottom: 3rem;
+  
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.all-recipes-card {
+  background: #001711;
+  border: 1.5px solid #D5A23E;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    border-color: #00B5A2;
+  }
+}
+
+.all-recipes-card-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.all-recipes-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+  
+  .all-recipes-card:hover & {
+    transform: scale(1.05);
+  }
+}
+
+.all-recipes-card-content {
+  padding: 1.5rem;
+}
+
+.all-recipes-card-title {
+  color: #F2D8A8;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.all-recipes-card-carbs {
+  color: #D5A23E;
+  font-size: 1.1rem;
+  font-weight: 500;
 } 
