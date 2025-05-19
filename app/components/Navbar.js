@@ -31,20 +31,16 @@ export default function Navbar() {
           <a href="https://www.instagram.com/diabetatech" target="_blank" rel="noopener noreferrer" className="cta">Insulin + Instagram</a>
         </div>
 
-        {/* Hamburger (mobile only) */}
+        {/* Animated Hamburger */}
         <button
-          className="hamburger"
+          className={`hamburger-button ${isMenuOpen ? 'open' : ''}`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
           type="button"
         >
-          <Image
-            src="/hamburger_icon.png"
-            alt="Open menu"
-            width={32}
-            height={32}
-            className="w-8 h-8"
-          />
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
         </button>
       </div>
 
