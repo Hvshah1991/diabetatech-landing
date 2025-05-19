@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from './components/Navbar';
 import CookieConsent from './components/CookieConsent';
 import Footer from './components/Footer';
+import { Analytics } from "@vercel/analytics/next"
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -44,6 +45,7 @@ export default function RootLayout({ children }) {
           {children}
           <Footer />
         </div>
+        <Analytics />
       </body>
     </html>
   );

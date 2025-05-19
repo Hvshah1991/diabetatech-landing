@@ -15,6 +15,18 @@ export default function AllRecipesPage() {
       image: "/eggplant.png",
       carbs: "Net Carbs: 0g",
       link: "/diet/eggplant-burrata"
+    },
+    {
+      name: "Quinoa Veggie Bowl",
+      image: "/quinoa_bowl.jpg",
+      carbs: "Net Carbs: 20g",
+      link: "/diet/quinoa-bowl"
+    },
+    {
+      name: "Meduwada and Sambhar",
+      image: "/wada_sambhar.jpg",
+      carbs: "Net Carbs: 18g",
+      link: "/diet/wada-sambhar"
     }
   ];
 

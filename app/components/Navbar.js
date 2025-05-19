@@ -28,7 +28,7 @@ export default function Navbar() {
 
         {/* Desktop CTA */}
         <div className="desktop">
-          <Link href="/contact" className="cta">Join Now</Link>
+          <a href="https://www.instagram.com/diabetatech" target="_blank" rel="noopener noreferrer" className="cta">Insulin + Instagram</a>
         </div>
 
         {/* Hamburger (mobile only) */}
@@ -54,7 +54,7 @@ export default function Navbar() {
           <Link href="/#about" className="mobile-link about-link" onClick={handleLinkClick}>About</Link>
           <a href="https://diabetatech-meal-tracker.replit.app" target="_blank" rel="noopener noreferrer" className="mobile-link tracker-link" onClick={handleLinkClick}>Tracker</a>
           <Link href="/contact" className="mobile-link contact-link" onClick={handleLinkClick}>Contact</Link>
-          <Link href="/contact" className="mobile-link cta" onClick={handleLinkClick}>Join Now</Link>
+          <a href="https://www.instagram.com/diabetatech" target="_blank" rel="noopener noreferrer" className="mobile-link cta" onClick={handleLinkClick}>Insulin + Instagram</a>
         </div>
       )}
     </nav>
