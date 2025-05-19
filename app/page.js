@@ -218,7 +218,7 @@ export default function HomePage() {
       </section>
       
       {/* Diet Section */}
-      <section className="diet-section">
+      <section className="diet-section" id="diet">
         <div className="diet-content">
           <h2 className="diet-heading">Diet: Real food. Real love. T1D-friendly.</h2>
           
@@ -288,7 +288,7 @@ export default function HomePage() {
         </div>
       </section>
       {/* Community Section */}
-      <section className="community-section">
+      <section className="community-section" id="community">
         <div className="community-content">
           <div className="community-main">
             <h2 className="community-heading">Community</h2>

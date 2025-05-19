@@ -142,7 +142,7 @@
   min-width: 0;
 
   .about-link {
-    color: #DE3338;
+    color: #F2D8A8;
     text-decoration: none;
     &:hover {
       text-decoration: none;
@@ -150,6 +150,20 @@
   }
   .tracker-link {
     color: #D5A23E;
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .diet-link {
+    color: #505EA6;
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .community-link {
+    color: #DE3338;
     text-decoration: none;
     &:hover {
       text-decoration: none;
@@ -182,8 +196,10 @@
 }
 
 // Mobile menu link colors
-.mobile-link.about-link { color: #DE3338; }
+.mobile-link.about-link { color: #F2D8A8; }
 .mobile-link.tracker-link { color: #D5A23E; }
+.mobile-link.diet-link { color: #505EA6; }
+.mobile-link.community-link { color: #DE3338; }
 .mobile-link.contact-link { color: #638A12; }
 .mobile-link.cta { background: #00B5A2; color: white; }
 

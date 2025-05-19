@@ -23,6 +23,8 @@ export default function Navbar() {
         <div className="nav-links desktop">
           <Link href="/#about" className="about-link">About</Link>
           <a href="https://diabetatech-meal-tracker.replit.app" target="_blank" rel="noopener noreferrer" className="tracker-link">Tracker</a>
+          <Link href="/#diet" className="diet-link">Diet</Link>
+          <Link href="/#community" className="community-link">Community</Link>
           <Link href="/contact" className="contact-link">Contact</Link>
         </div>
 
@@ -49,6 +51,8 @@ export default function Navbar() {
         <div className="mobile-menu">
           <Link href="/#about" className="mobile-link about-link" onClick={handleLinkClick}>About</Link>
           <a href="https://diabetatech-meal-tracker.replit.app" target="_blank" rel="noopener noreferrer" className="mobile-link tracker-link" onClick={handleLinkClick}>Tracker</a>
+          <Link href="/#diet" className="mobile-link diet-link" onClick={handleLinkClick}>Diet</Link>
+          <Link href="/#community" className="mobile-link community-link" onClick={handleLinkClick}>Community</Link>
           <Link href="/contact" className="mobile-link contact-link" onClick={handleLinkClick}>Contact</Link>
           <a href="https://www.instagram.com/diabetatech" target="_blank" rel="noopener noreferrer" className="mobile-link cta" onClick={handleLinkClick}>Insulin + Instagram</a>
         </div>
