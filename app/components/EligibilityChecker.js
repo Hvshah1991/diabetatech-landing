@@ -119,7 +119,7 @@ export default function EligibilityChecker({ isOpen, onClose }) {
                 <h2>Perfect Match!</h2>
                 <p>DiabetaTech Meal Tracker is optimized for your device combination.</p>
                 <a 
-                  href="https://buy.stripe.com/00w00i9zCabyaFRdu0gMw00" 
+                  href="https://tracker-diabeta.tech/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="eligibility-button payment-button"
